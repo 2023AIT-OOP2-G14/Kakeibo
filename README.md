@@ -3,9 +3,9 @@
 
 # 入力ページの仕様
 - フォームでデータを処理する
-- 金額　使った金額を入力 inputタグ　type="number" name="number"
-- カテゴリー 食費・趣味・交際・日用品・その他 selectタグ optionのvalue値 food/hobby/fare/necessities/other
-- 日付　日付を指定 inputタグ type="date" 　name="date"
+- データ１：金額　使った金額を入力 inputタグ　type="number" name="number"
+- データ２：カテゴリー 食費・趣味・交際・日用品・その他 selectタグ optionのvalue値 food/hobby/fare/necessities/other
+- データ３：日付　日付を指定 inputタグ type="date" 　name="date"
 - 送信先URL:/input Method:POST
 
 # カレンダーページ

@@ -30,7 +30,7 @@ def _add_json_data(amount, category, date):
 
     Parameters
     ----------
-    amount : float
+    amount : int
         追加する経費の金額。
     category : str
         経費のカテゴリ。

@@ -1,0 +1,15 @@
+.header {
+    background-color: #f1f1f1;
+    padding: 20px;
+    text-align: center;
+}
+
+.header a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.header a:hover {
+    color: blue;
+}

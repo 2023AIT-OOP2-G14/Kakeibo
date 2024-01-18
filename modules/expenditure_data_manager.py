@@ -1,8 +1,44 @@
 import pathlib
 import json
+from collections import defaultdict
+from datetime import datetime
 
 file_path = './modules/balance_of_account.json'
 file_path_obj = pathlib.Path(file_path)
+
+def get_graph_data(date):
+    """
+    指定された日付の各カテゴリーに対する支出データを取得します。
+
+    Parameters
+    ----------
+    date : str
+        検索する日付。形式は 'YYYY-MM-DD' です。
+
+    Returns
+    -------
+    dict
+        各カテゴリーの支出総額を含む辞書。カテゴリーが存在しない場合は 'その他' として集計します。
+
+    """
+    if not file_path_obj.exists():
+        return {}
+    
+    with open(file_path, 'r') as json_open:
+        j = json.load(json_open)
+
+    result_dict = defaultdict(int)
+    category_list = ['食費', '外食費', '日用品', '交通費', '衣服', '交際費', '趣味']
+
+    search_date = datetime.strptime(date, '%Y-%m-%d').date()
+
+    for entry in j:
+        entry_date = datetime.strptime(entry["date"], '%Y-%m-%d').date()
+        if entry_date.year == search_date.year and entry_date.month == search_date.month:
+            category = entry["category"] if entry["category"] in category_list else "その他"
+            result_dict[category] += entry["amount"]
+
+    return dict(result_dict)
 
 def add_data(amount, category, date):
     """

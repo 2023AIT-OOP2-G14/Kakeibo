@@ -26,6 +26,18 @@
         button {
             font-size: 40px;
             /* ボタンの文字サイズを大きく */
+            margin-top: 30px; /* 上側に50px間隔をあける */
+
+        }
+
+        center{
+            display: block;
+            margin: auto;
+            /*中央揃え用*/
+        }
+
+        .input-container{
+            margin-bottom: 80px;
         }
     </style>
 </head>
@@ -38,22 +50,26 @@
         <a href="/calendar">カレンダーページ</a>
     </div>
 
-    <h1>データ入力ページ</h1>
+    <center><h1>データ入力ページ</h1></center><br>
 
     <form action="/input" method="post">
-        <center>
-            <label for="amount">金額を入力してください</label><br>
-            <input type="number" id="amount" name="amount" required>
-            <br>
-        </center>
 
-        <br>
+        <div class="input-container">
+            <center>
+                <label for="amount">金額を入力してください</label><br>
+                <input type="number" id="amount" name="amount" required>
+                <br>
+            </center>
+        </div>
+        
 
-        <center>
-            <label for="category">カテゴリー</label><br>
-            <input type="text" id="category" name="category" required>
-            <br>
-        </center>
+        
+            <center>
+                <label for="category">カテゴリー</label><br>
+                <input type="text" id="category" name="category" required>
+                <br>
+            </center>
+  
 
         <center>
             <label for="date">日付</label><br>

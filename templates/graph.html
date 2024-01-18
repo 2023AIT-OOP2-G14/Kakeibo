@@ -2,6 +2,7 @@
 <html lang="jp">
 <head>
     <title>グラフページ</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
     <style>
         #graphContainer {
             text-align: center;
@@ -27,6 +28,11 @@
 </head>
 
 <body>
+    <div class="header">
+        <a href="/">入力ページ</a>
+        <a href="/graph">グラフページ</a>
+        <a href="/calendar">カレンダーページ</a>
+    </div>
     <div id="graphContainer">
         <div id="graphAccessory">
             <button onclick="handlePrevButtonClick()">前へ</button>
@@ -35,6 +41,21 @@
         </div>
         <canvas id="myPieChart"></canvas>
     </div>
+
+    <div id="CategoryDetail">
+        <table>
+            <thead>
+                <tr>
+                    <th>カテゴリー</th>
+                    <th>合計金額</th>
+                </tr>
+            </thead>
+            <tbody id="categoryTableBody">
+                <!-- カテゴリごとの合計金額が動的に挿入されます -->
+            </tbody>
+        </table>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
     <script src="/static/PieChart.js"></script>
 </body>

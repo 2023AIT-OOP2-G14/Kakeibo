@@ -26,6 +26,7 @@ function fetchData(date = getCurrentDate()) {
                 console.log('データが空です。');
                 alert('この月は、まだデータが登録されていません。');
                 updatePieChart(data);
+                updateCategoryTable(data);
             }
         });
 }
@@ -58,6 +59,7 @@ function updatePieChart(data) {
 
     // 円グラフを再描画
     myPieChart.update();
+    updateCategoryTable(data);
 }
 
 /**
@@ -186,4 +188,60 @@ function formatMonth(date) {
     const year = date.getFullYear();
     const month = date.getMonth() + 1; // 月は0から始まるため、+1 する
     return `${year}年${month}月`;
+}
+
+/**
+ * 指定されたデータを使用してカテゴリーテーブルを更新します。
+ * この関数では、月ごとの総合計も計算し、テーブルに表示します。
+ *
+ * @param {Object} data - カテゴリーとその金額をマッピングしたオブジェクト。
+ * キーはカテゴリー名（"食費"、"外食費"、"日用品"、"交通費"、"衣服"、"交際費"、"趣味"、"その他"）で、
+ * 値はそのカテゴリーの金額です。
+ */
+function updateCategoryTable(data) {
+    const tableBody = document.getElementById("categoryTableBody");
+
+    // カテゴリの順序を定義
+    const categoryOrder = ["食費", "外食費", "日用品", "交通費", "衣服", "交際費", "趣味", "その他"];
+
+    // テーブル内の既存のデータをクリア
+    tableBody.innerHTML = "";
+
+    // 月ごとの総合計を計算
+    const totalAmount = Object.values(data).reduce((total, amount) => total + amount, 0);
+    // 総合計を表示する行を作成して挿入
+    const row = document.createElement("tr");
+
+    const categoryNameCell = document.createElement("td");
+    categoryNameCell.textContent = "合計";
+
+    const totalAmountCell = document.createElement("td");
+    totalAmountCell.textContent = totalAmount + "円";
+
+    row.appendChild(categoryNameCell);
+    row.appendChild(totalAmountCell);
+
+    tableBody.appendChild(row);
+
+    // カテゴリの順序に従ってテーブル行を作成して挿入
+    categoryOrder.forEach(category => {
+        const amount = data[category] || 0;
+
+        // 金額が0でない場合のみ行を追加
+        if (amount !== 0) {
+            const row = document.createElement("tr");
+
+            const categoryNameCell = document.createElement("td");
+            categoryNameCell.textContent = category;
+
+            const totalAmountCell = document.createElement("td");
+            totalAmountCell.textContent = amount;
+            totalAmountCell.textContent = amount + "円";
+
+            row.appendChild(categoryNameCell);
+            row.appendChild(totalAmountCell);
+
+            tableBody.appendChild(row);
+        }
+    });
 }

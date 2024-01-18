@@ -160,4 +160,4 @@ cython_debug/
 #.idea/
 
 # Custom
-./modules/balance_of_account.json
+modules/balance_of_account.json

@@ -8,22 +8,25 @@
     <title>入力ページ</title>
 
     <style>
-        /* 追加したスタイル */
+        body {
+            font-family: 'arial unicode ms', sans-serif;
+            /* フォントを'arial unicode ms'に変更 */
+        }
+
         label {
-            font-size: 4em;
-            /* 4倍の大きさに指定 */
+            font-size: 40px;
+            /* ラベルの文字サイズを大きく */
         }
 
         input {
-            font-size: 4em;
-            /* 4倍の大きさに指定 */
+            font-size: 40px;
+            /* 入力フィールドの文字サイズを大きく */
         }
 
         button {
-            font-size: 4em;
-            /* 4倍の大きさに指定 */
+            font-size: 40px;
+            /* ボタンの文字サイズを大きく */
         }
-
     </style>
 </head>
 
@@ -45,7 +48,7 @@
         </center>
 
         <br>
-        
+
         <center>
             <label for="category">カテゴリー</label><br>
             <input type="text" id="category" name="category" required>
@@ -61,10 +64,12 @@
         <br>
 
         <center>
-            <button type="submit" style="background-color: #ff6f61; color: #fff; padding: 25px 35px; font-size: 30px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">保存</button>
+            <button type="submit"
+                style="background-color: #ff6f61; color: #fff; padding: 25px 35px; font-size: 30px; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">保存</button>
         </center>
         <br>
     </form>
+
 </body>
 
 </html>

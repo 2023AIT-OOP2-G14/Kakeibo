@@ -35,7 +35,7 @@ def expenses_add():
     # データの追加
     expenditure_data_manager.add_data(amount, category, date)
 
-    return render_template('input.html')
+    return jsonify({'message': 'OK'}), 200
 
 if __name__ == '__main__':
     app.run(debug=True)

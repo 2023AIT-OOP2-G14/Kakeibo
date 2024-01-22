@@ -1,10 +1,62 @@
 <!DOCTYPE html>
 <html lang="jp">
 <head>
-<title>グラフページ</title>
+    <title>グラフページ</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <style>
+        #graphContainer {
+            text-align: center;
+        }
+
+        #graphAccessory {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px; /* ボタンとキャンバスの間隔を調整 */
+        }
+
+        #graphTitle {
+            margin: 0 10px; /* タイトルとボタンの間隔を調整 */
+            font-size: 18px; /* 適切なフォントサイズに調整してください */
+        }
+        /*
+        canvas {
+            border: 1px solid #000; キャンバスの境界を表示する場合
+        }
+        */
+    </style>
 </head>
 
 <body>
+    <div class="header">
+        <a href="/">入力ページ</a>
+        <a href="/graph">グラフページ</a>
+        <a href="/calendar">カレンダーページ</a>
+    </div>
+    <div id="graphContainer">
+        <div id="graphAccessory">
+            <button onclick="handlePrevButtonClick()">前へ</button>
+            <p id="graphTitle">今月の支出</p>
+            <button onclick="handleNextButtonClick()">次へ</button>
+        </div>
+        <canvas id="myPieChart"></canvas>
+    </div>
 
+    <div id="CategoryDetail">
+        <table>
+            <thead>
+                <tr>
+                    <th>カテゴリー</th>
+                    <th>合計金額</th>
+                </tr>
+            </thead>
+            <tbody id="categoryTableBody">
+                <!-- カテゴリごとの合計金額が動的に挿入されます -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
+    <script src="/static/PieChart.js"></script>
 </body>
-</html>  
+</html>

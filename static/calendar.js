@@ -52,25 +52,21 @@ function generate_year_range(start, end) {
   }
   
   function showCalendar(month, year) {
-  
-    var firstDay = ( new Date( year, month ) ).getDay();
-  
+    var firstDay = (new Date(year, month)).getDay();
     tbl = document.getElementById("calendar-body");
-  
     tbl.innerHTML = "";
-  
-    monthAndYear.innerHTML = months[month] + " " + year;
+
+    monthAndYear.innerHTML = year + "年" + months[month]; // 月と年を逆に表示
     selectYear.value = year;
     selectMonth.value = month;
-  
-    // creating all cells
+
     var date = 1;
-    for ( var i = 0; i < 6; i++ ) {
+    for (var i = 0; i < 6; i++) {
         var row = document.createElement("tr");
-  
-        for ( var j = 0; j < 7; j++ ) {
-            if ( i === 0 && j < firstDay ) {
-                cell = document.createElement( "td" );
+
+        for (var j = 0; j < 7; j++) {
+            if (i === 0 && j < firstDay) {
+                cell = document.createElement("td");
                 cellText = document.createTextNode("");
                 cell.appendChild(cellText);
                 row.appendChild(cell);
@@ -84,21 +80,19 @@ function generate_year_range(start, end) {
                 cell.setAttribute("data-month_name", months[month]);
                 cell.className = "date-picker";
                 cell.innerHTML = "<span>" + date + "</span>";
-  
-                if ( date === today.getDate() && year === today.getFullYear() && month === today.getMonth() ) {
+
+                if (date === today.getDate() && year === today.getFullYear() && month === today.getMonth()) {
                     cell.className = "date-picker selected";
                 }
                 row.appendChild(cell);
                 date++;
             }
         }
-  
+
         tbl.appendChild(row);
     }
-  
   }
-  
+
   function daysInMonth(iMonth, iYear) {
     return 32 - new Date(iYear, iMonth, 32).getDate();
   }
-  

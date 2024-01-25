@@ -72,14 +72,14 @@ var myPieChart = new Chart(ctx, {
         labels: ["食費", "外食費", "日用品", "交通費", "衣服", "交際費", "趣味", "その他"],
         datasets: [{
             backgroundColor: [
-                "#BB5179",
-                "#FAFF67",
-                "#58A27C",
-                "#3C00FF",
-                "#FF0000",
-                "#00FF00",
-                "#0000FF",
-                "#FF00FF"
+                "#ff8585",
+                "#FFA500",
+                "#FFFF00",
+                "#00ff00",
+                "#00FFFF",
+                "#9898ed",
+                "#ec73ec",
+                "#959595"
             ],
             data: [0, 0, 0, 0, 0, 0, 0, 0]
         }]
@@ -232,11 +232,15 @@ function updateCategoryTable(data) {
             const row = document.createElement("tr");
 
             const categoryNameCell = document.createElement("td");
-            categoryNameCell.textContent = category;
+            const circle = document.createElement("span");
+            circle.classList.add("circle", `circle-${category}`); // カテゴリに対応する色の丸を追加
+            categoryNameCell.appendChild(circle);
+
+            const categoryText = document.createTextNode(` ${category}`);
+            categoryNameCell.appendChild(categoryText);
 
             const totalAmountCell = document.createElement("td");
-            totalAmountCell.textContent = amount;
-            totalAmountCell.textContent = amount + "円";
+            totalAmountCell.textContent = `${amount}円`;
 
             row.appendChild(categoryNameCell);
             row.appendChild(totalAmountCell);

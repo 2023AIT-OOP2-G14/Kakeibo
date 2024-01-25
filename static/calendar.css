@@ -76,6 +76,7 @@
   color: blue;
   }
   #monthAndYear {
+    font-size: 28px;
     text-align: center;
     margin-top: 0;
   }
@@ -106,6 +107,11 @@
     border-radius: 3px;
     padding: 5px 1em;
   }
+
+  .table-calendar td
+  {
+    max-width: 90px;
+  }
   /* --------------------*/
   /* 支出詳細表示部分　　　*/
   /* --------------------*/
@@ -117,6 +123,27 @@
   }
 
   #detailTableTitle {
+    font-size: 28px;
     text-align: center;
     margin-top: 0;
+  }
+
+  .table-detail
+  {
+    margin-left: auto;
+    margin-right: auto;
+    border-collapse:  collapse;
+  }
+
+  #detail-body td, #detail-head th
+  {
+    padding: 0px 100px 0px 0px;
+    font-size: 150%;
+    border: 1px solid #000;
+  }
+
+  #detail-body td:nth-child(2)
+  {
+    padding: 0px 0px 0px 75px;
+    text-align: right;
   }

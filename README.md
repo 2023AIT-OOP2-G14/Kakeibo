@@ -92,12 +92,12 @@ main.pyの場所は、このリポジトリのルートディレクトリに配�
 | K22095 | input.htmlのCSS、発表用資料の作成 | CSSはほとんど完成。発表用資料の作成中 |
 | k22093 | calendar.htmlのCSS | (△)カレンダーに金額を表示する機能の実装待ち。ただし、CSSはほとんど完成している。 |
 
-# 入力ページの仕様
-- フォームでデータを処理する
-- データ１：金額　使った金額を入力 inputタグ　type="number" name="number"
-- データ２：カテゴリー 食費・趣味・交際・日用品・その他 selectタグ optionのvalue値 food/hobby/fare/necessities/other
-- データ３：日付　日付を指定 inputタグ type="date" 　name="date"
-- 送信先URL:/input Method:POST
+# 入力ページの説明
+- 金額を入力(半角)
+- カテゴリーを入力(食費、衣服など)
+- 日付を選択
+- 入力されたものを保存
+- （画像）
 
 # カレンダーページ
 - GETリクエストで特定の日にちの支出合計を取得

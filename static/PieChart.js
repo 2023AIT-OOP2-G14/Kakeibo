@@ -81,7 +81,7 @@ var myPieChart = new Chart(ctx, {
                 "#ec73ec",
                 "#959595"
             ],
-            data: [38, 31, 21, 10, 20, 10, 20, 30]
+            data: [0, 0, 0, 0, 0, 0, 0, 0]
         }]
     },
     options: {

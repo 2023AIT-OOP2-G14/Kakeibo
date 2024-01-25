@@ -50,7 +50,17 @@
 
         <center>
             <label for="category">カテゴリー</label><br>
-            <input type="text" id="category" name="category" required>
+            <input type="text" id="category" name="category" list="example" required>
+            <datalist id="example">
+                <option value="食費"></option>
+                <option value="外食費"></option>
+                <option value="日用品"></option>
+                <option value="交通費"></option>
+                <option value="衣服"></option>
+                <option value="交際費"></option>
+                <option value="趣味"></option>
+                <option value="その他"></option>
+            </datalist>
             <br>
         </center>
 

@@ -5,7 +5,7 @@ var currentYear = today.getFullYear();
 var selectYear = document.getElementById("year");
 var selectMonth = document.getElementById("month");
 // 生成する年の範囲設定とその反映
-var createYear = generate_year_range(1970, 2200);
+var createYear = generate_year_range(2000, 2030);
 document.getElementById("year").innerHTML = createYear;
 
 var calendar = document.getElementById("calendar");
@@ -92,7 +92,7 @@ async function showCalendar(month, year) {
         if(Object.keys(jsonData).length === 0 || jsonData[date] === 0)
         {
           // 月別データがない場合
-          iTEXT = "データなし";
+          iTEXT = "";
         }
         else
         {
@@ -177,10 +177,10 @@ async function showDetail(date, month, year) {
     cell.appendChild(cellText);
     row.appendChild(cell);
     // 削除ボタン
-    cell = document.createElement("td");
-    cell.innerHTML = "<button type='button' id='delete-button'>削除</button>";
-    row.appendChild(cell);
-    detailBody.appendChild(row);
+    //cell = document.createElement("td");
+    //cell.innerHTML = "<button type='button' id='delete-button'>削除</button>";
+    //row.appendChild(cell);
+    //detailBody.appendChild(row);
   }
   // イベントリスナーの追加
   const buttons = document.querySelectorAll('#delete-button');

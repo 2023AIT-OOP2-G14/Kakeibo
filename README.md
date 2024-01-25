@@ -1,4 +1,4 @@
-Kakeibo　（名称未決定　1/25の授業で決定予定）
+かけいぼつけるくん
 ===
 
 # アプリ概要
@@ -6,17 +6,17 @@ Kakeibo　（名称未決定　1/25の授業で決定予定）
 
 # 実行方法
 このリポジトリをクローンして、ターミナルで、`$python main.py`で実行すると、以下のようなメッセージが表示されます。<br>
-ターミナルに表示される http://127.0.0.1:5000 にアクセスすることで、実行確認ができます。
+ターミナルに表示される http://127.0.0.1:8888 にアクセスすることで、実行確認ができます。
 ```
 * Serving Flask app 'main'
  * Debug mode: on
 WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
- * Running on http://127.0.0.1:5000
+ * Running on http://127.0.0.1:8888
 Press CTRL+C to quit
 ```
 
 また、VSCodeを使用する場合は、Run Codeで実行すると、出力に上記と同じメッセージが表示されます。<br>
-出力に表示される http://127.0.0.1:5000 にアクセスすることでも実行確認ができます。
+出力に表示される http://127.0.0.1:8888 にアクセスすることでも実行確認ができます。
 
 main.pyの場所は、このリポジトリのルートディレクトリに配置されています。`./main.py`<br>
 詳細は、以降に記述されている「ディレクトリ構造」を参照してください。
@@ -92,12 +92,8 @@ main.pyの場所は、このリポジトリのルートディレクトリに配�
 | K22095 | input.htmlのCSS、発表用資料の作成 | CSSはほとんど完成。発表用資料の作成中 |
 | k22093 | calendar.htmlのCSS | (△)カレンダーに金額を表示する機能の実装待ち。ただし、CSSはほとんど完成している。 |
 
-# 入力ページの仕様
-- フォームでデータを処理する
-- データ１：金額　使った金額を入力 inputタグ　type="number" name="number"
-- データ２：カテゴリー 食費・趣味・交際・日用品・その他 selectタグ optionのvalue値 food/hobby/fare/necessities/other
-- データ３：日付　日付を指定 inputタグ type="date" 　name="date"
-- 送信先URL:/input Method:POST
+# 画面遷移図
+![kakeibo.png](https://github.com/2023AIT-OOP2-G14/Kakeibo/blob/main/kakeibo.png)
 
 # カレンダーページ
 (calendar.png)
@@ -105,5 +101,21 @@ main.pyの場所は、このリポジトリのルートディレクトリに配�
 - 日付を選択するとその日の各カテゴリー支出がわかる
 - 月指定で年月の直接指定もできる 
 
+# 入力ページの説明
+![input_md.png](https://github.com/2023AIT-OOP2-G14/Kakeibo/blob/main/input_md.png)
+- 金額を入力(半角)
+- カテゴリーを入力(食費、衣服など)
+- 日付を選択
+- 入力されたものを保存
 
 # グラフページ 
+![graph_md.png](https://github.com/2023AIT-OOP2-G14/Kakeibo/blob/main/graph_md.png)
+- 入力ページで保存されたカテゴリーと金額を円グラフと表として表示
+- カーソルをグラフに合わせるとそのカテゴリーの合計金額を表示
+- グラフの上の入力された各カテゴリーをクリックするとそのカテゴリーを除いたグラフを表示する
+
+# カレンダーページ
+![calendar.png](https://github.com/2023AIT-OOP2-G14/Kakeibo/blob/main/calendar.png)
+- 日付ごとや月ごとの合計支出が一目でわかる
+- 日付を選択するとその日の各カテゴリー支出がわかる
+- 月指定で年月の直接指定もできる 

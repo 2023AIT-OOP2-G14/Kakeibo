@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="static/style.css">
     <title>入力ページ</title>
-
+    <link rel="icon" href="static/favicon.ico">
     <style>
         body {
             font-family: 'arial unicode ms', sans-serif;
@@ -26,18 +26,6 @@
         button {
             font-size: 40px;
             /* ボタンの文字サイズを大きく */
-            margin-top: 30px; /* 上側に50px間隔をあける */
-
-        }
-
-        center{
-            display: block;
-            margin: auto;
-            /*中央揃え用*/
-        }
-
-        .input-container{
-            margin-bottom: 80px;
         }
     </style>
 </head>
@@ -49,27 +37,22 @@
         <a href="/graph">グラフページ</a>
         <a href="/calendar">カレンダーページ</a>
     </div>
-
-    <center><h1>データ入力ページ</h1></center><br>
+    <br>
 
     <form action="/input" method="post">
+        <center>
+            <label for="amount">金額を入力してください</label><br>
+            <input type="number" id="amount" name="amount" required>
+            <br>
+        </center>
 
-        <div class="input-container">
-            <center>
-                <label for="amount">金額を入力してください</label><br>
-                <input type="number" id="amount" name="amount" required>
-                <br>
-            </center>
-        </div>
-        
+        <br>
 
-        
-            <center>
-                <label for="category">カテゴリー</label><br>
-                <input type="text" id="category" name="category" required>
-                <br>
-            </center>
-  
+        <center>
+            <label for="category">カテゴリー</label><br>
+            <input type="text" id="category" name="category" required>
+            <br>
+        </center>
 
         <center>
             <label for="date">日付</label><br>

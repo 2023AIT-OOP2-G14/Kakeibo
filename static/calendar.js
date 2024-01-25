@@ -92,7 +92,7 @@ async function showCalendar(month, year) {
         if(Object.keys(jsonData).length === 0 || jsonData[date] === 0)
         {
           // 月別データがない場合
-          iTEXT = "";
+          iTEXT = "　";
         }
         else
         {

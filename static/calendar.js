@@ -180,7 +180,7 @@ async function showDetail(date, month, year) {
     //cell = document.createElement("td");
     //cell.innerHTML = "<button type='button' id='delete-button'>削除</button>";
     //row.appendChild(cell);
-    //detailBody.appendChild(row);
+    detailBody.appendChild(row);
   }
   // イベントリスナーの追加
   const buttons = document.querySelectorAll('#delete-button');

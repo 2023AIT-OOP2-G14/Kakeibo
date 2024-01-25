@@ -65,6 +65,7 @@ def get_calendar_data():
         result_data = {}
     if not result_data:
         result_data = {}
+    print(result_data)
     return jsonify(result_data)
 
 if __name__ == '__main__':

@@ -7,6 +7,8 @@ var selectMonth = document.getElementById("month");
 // 生成する年の範囲設定とその反映
 var createYear = generate_year_range(2000, 2030);
 document.getElementById("year").innerHTML = createYear;
+// カテゴリー設定
+category_list = ['食費', '外食費', '日用品', '交通費', '衣服', '交際費', '趣味', 'その他']
 
 var calendar = document.getElementById("calendar");
 var lang = calendar.getAttribute('data-lang');
@@ -151,7 +153,7 @@ async function showDetail(date, month, year) {
   // 指定日の収支データを取得
   date_str = year + "-" + String(month+1).padStart(2, '0') + "-" + String(date).padStart(2, '0');
   console.log(date_str);
-  const params = {type: "day_detail", date : date_str};
+  const params = {type: "day_category_amount", date : date_str};
   const query = new URLSearchParams(params);
   const response = await fetch (`./calendar/data?${query}`);
   const jsonData = await response.json();
@@ -163,18 +165,22 @@ async function showDetail(date, month, year) {
   var detailBody = document.getElementById("detail-body");
   detailBody.innerHTML = "";
   // 日別データの表示
-  for(var i = 0; i < Object.keys(jsonData).length; i++)
+  for(var i = 0; i < category_list.length; i++)
   {
+    // カテゴリーの金額が0円の場合は表示しない
+    if(typeof jsonData[category_list[i]] === "undefined")
+    {
+      continue;
+    }
     var row = document.createElement("tr");
     // カテゴリー
     cell = document.createElement("td");
-
-    cellText = document.createTextNode(categoryPicker(jsonData[i].category));
+    cellText = document.createTextNode(category_list[i]);
     cell.appendChild(cellText);
     row.appendChild(cell);
     // 金額
     cell = document.createElement("td");
-    cellText = document.createTextNode(jsonData[i].amount + "円");
+    cellText = document.createTextNode(jsonData[category_list[i]] + "円");
     cell.appendChild(cellText);
     row.appendChild(cell);
     // 削除ボタン
@@ -194,22 +200,4 @@ async function showDetail(date, month, year) {
       console.log("Delete:" + date + " " + category + " " + amount);
     });
   });
-}
-
-function categoryPicker(categoryName)
-{
-  // 規定のカテゴリ一覧
-  category_list = ['食費', '外食費', '日用品', '交通費', '衣服', '交際費', '趣味']
-  // category_listに一致しないデータはその他とする
-  isMatch = false;
-  result = "その他";
-  for(var i = 0; i < category_list.length; i++)
-  {
-    if(category_list[i] === categoryName)
-    {
-      result = category_list[i];
-      break;
-    }
-  }
-  return result;
 }

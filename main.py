@@ -59,6 +59,8 @@ def get_calendar_data():
         result_data = expenditure_data_manager.get_days_amount_data(date)
     elif type == 'day_detail':
         result_data = expenditure_data_manager.get_day_detail_data(date)
+    elif type == 'day_category_amount':
+        result_data = expenditure_data_manager.get_day_category_amount(date)
     else:
         result_data = {}
     if not result_data:

@@ -92,6 +92,9 @@ main.pyの場所は、このリポジトリのルートディレクトリに配�
 | K22095 | input.htmlのCSS、発表用資料の作成 | CSSはほとんど完成。発表用資料の作成中 |
 | k22093 | calendar.htmlのCSS | (△)カレンダーに金額を表示する機能の実装待ち。ただし、CSSはほとんど完成している。 |
 
+# 画面遷移図
+![kakeibo.png](https://github.com/2023AIT-OOP2-G14/Kakeibo/blob/main/kakeibo.png)
+
 # 入力ページの説明
 ![input_md.png](https://github.com/2023AIT-OOP2-G14/Kakeibo/blob/main/input_md.png)
 - 金額を入力(半角)

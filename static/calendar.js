@@ -168,7 +168,8 @@ async function showDetail(date, month, year) {
     var row = document.createElement("tr");
     // カテゴリー
     cell = document.createElement("td");
-    cellText = document.createTextNode(jsonData[i].category);
+
+    cellText = document.createTextNode(categoryPicker(jsonData[i].category));
     cell.appendChild(cellText);
     row.appendChild(cell);
     // 金額
@@ -193,4 +194,22 @@ async function showDetail(date, month, year) {
       console.log("Delete:" + date + " " + category + " " + amount);
     });
   });
+}
+
+function categoryPicker(categoryName)
+{
+  // 規定のカテゴリ一覧
+  category_list = ['食費', '外食費', '日用品', '交通費', '衣服', '交際費', '趣味']
+  // category_listに一致しないデータはその他とする
+  isMatch = false;
+  result = "その他";
+  for(var i = 0; i < category_list.length; i++)
+  {
+    if(category_list[i] === categoryName)
+    {
+      result = category_list[i];
+      break;
+    }
+  }
+  return result;
 }

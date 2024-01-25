@@ -95,6 +95,12 @@ main.pyの場所は、このリポジトリのルートディレクトリに配�
 # 画面遷移図
 ![kakeibo.png](https://github.com/2023AIT-OOP2-G14/Kakeibo/blob/main/kakeibo.png)
 
+# カレンダーページ
+(calendar.png)
+- 日付ごとや月ごとの合計支出が一目でわかる
+- 日付を選択するとその日の各カテゴリー支出がわかる
+- 月指定で年月の直接指定もできる 
+
 # 入力ページの説明
 ![input_md.png](https://github.com/2023AIT-OOP2-G14/Kakeibo/blob/main/input_md.png)
 - 金額を入力(半角)
@@ -107,3 +113,9 @@ main.pyの場所は、このリポジトリのルートディレクトリに配�
 - 入力ページで保存されたカテゴリーと金額を円グラフと表として表示
 - カーソルをグラフに合わせるとそのカテゴリーの合計金額を表示
 - グラフの上の入力された各カテゴリーをクリックするとそのカテゴリーを除いたグラフを表示する
+
+# カレンダーページ
+![calendar.png](https://github.com/2023AIT-OOP2-G14/Kakeibo/blob/main/calendar.png)
+- 日付ごとや月ごとの合計支出が一目でわかる
+- 日付を選択するとその日の各カテゴリー支出がわかる
+- 月指定で年月の直接指定もできる 

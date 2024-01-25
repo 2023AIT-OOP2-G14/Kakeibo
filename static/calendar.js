@@ -160,7 +160,7 @@ async function showDetail(date, month, year) {
   console.log(jsonData);
   // タイトル更新
   var detailTitle = document.getElementById("detailTableTitle");
-  detailTitle.innerHTML = year + "年" + (month+1) + "月" + date + "日の収支詳細データ";
+  detailTitle.innerHTML = year + "年" + (month+1) + "月" + date + "日の支出詳細データ";
   // テーブル更新
   var detailBody = document.getElementById("detail-body");
   detailBody.innerHTML = "";

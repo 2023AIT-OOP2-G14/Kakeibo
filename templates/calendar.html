@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <title>カレンダーページ</title>
   <!-- カレンダーのスタイルシート -->
   <link rel="stylesheet" href="../static/calendar.css">
@@ -10,8 +11,15 @@
   <link rel="stylesheet" href="../static/style.css">
   </head>
 <body>
+  <!-- Header -->
+  <div class="header">
+    <a href="/">入力ページ</a>
+    <a href="/graph">グラフページ</a>
+    <a href="/calendar">カレンダーページ</a>
+  </div>
+
   <!-- Body カレンダー部 -->
-  <div class="container-calendar">
+  <div class="container-calendar main">
     <h4 id="monthAndYear"></h4>
     <div class="button-container-calendar">
       <button id="previous" onclick="previous()">‹</button>
@@ -41,14 +49,28 @@
       </select>
     </div>
   </div>
-  <script src="../static/calendar.js"></script>
-  
-  <!-- Header -->
-  <div class="header">
-    <a href="/">入力ページ</a>
-    <a href="/graph">グラフページ</a>
-    <a href="/calendar">カレンダーページ</a>
+
+  <!-- Body 支出詳細表示部 -->
+  <div class="container-detail main">
+    <h4 id="detailTableTitle">YYYY年MM月DD日の詳細</h4>
+    <table class="table-detail">
+      <thead id="thead-header">
+        <tr>
+          <th>カテゴリ</th>
+          <th>金額</th>
+        </tr>
+      </thead>
+      <tbody id="detail-body">
+        <!-- ここに支出詳細が入る -->
+        <tr>
+          <td id="detail-data-message">&nbsp;<!-- メッセージ表示用　データなしの場合にその旨を表示--></td>
+          <td><!-- --></td>
+          <td><!-- --></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
+  <script src="../static/calendar.js"></script>
 
 </body>
 </html>

@@ -232,11 +232,15 @@ function updateCategoryTable(data) {
             const row = document.createElement("tr");
 
             const categoryNameCell = document.createElement("td");
-            categoryNameCell.textContent = category;
+            const circle = document.createElement("span");
+            circle.classList.add("circle", `circle-${category}`); // カテゴリに対応する色の丸を追加
+            categoryNameCell.appendChild(circle);
+
+            const categoryText = document.createTextNode(` ${category}`);
+            categoryNameCell.appendChild(categoryText);
 
             const totalAmountCell = document.createElement("td");
-            totalAmountCell.textContent = amount;
-            totalAmountCell.textContent = amount + "円";
+            totalAmountCell.textContent = `${amount}円`;
 
             row.appendChild(categoryNameCell);
             row.appendChild(totalAmountCell);

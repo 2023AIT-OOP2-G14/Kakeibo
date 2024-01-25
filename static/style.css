@@ -13,3 +13,13 @@
 .header a:hover {
     color: blue;
 }
+circle {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.circle.food { background-color: #ffcc99; } /* 食費 */
+.circle.dining { background-color: #ff9999; } /* 外食費 */

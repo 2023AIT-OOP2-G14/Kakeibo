@@ -65,7 +65,7 @@ def _get_days_of_month(year, month):
     # 月ごとの日数を格納したリスト
     days = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     if month == 2: # うるう年
-        if year % 4 == 0 and (year % 100 != 0 or y % 400 == 0):
+        if year % 4 == 0 and (year % 100 != 0 or year % 400 == 0):
             return 29
     return days[month - 1]
 
